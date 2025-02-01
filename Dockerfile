@@ -1,20 +1,23 @@
-# Usar una imagen base que ya tenga Python
-FROM python:3.9-slim
+# Usar una imagen base que tenga Node.js
+FROM node:16-buster-slim
 
-# Establecer el directorio de trabajo
+# Instalar Python y pip
+RUN apt-get update && apt-get install -y python3-pip
+
+# Establecer el directorio de trabajo en el contenedor
 WORKDIR /app
 
-# Copiar los archivos del proyecto a la imagen
+# Copiar los archivos del proyecto al contenedor
 COPY . /app
 
 # Instalar las dependencias de Python
-RUN pip install --upgrade pip && pip install -r requirements.txt
+RUN pip3 install -r requirements.txt
 
 # Instalar las dependencias de Node.js
 RUN npm install
 
-# Exponer el puerto en el que tu aplicación escuchará
+# Exponer el puerto en el que tu aplicación escuchará (ajusta si es necesario)
 EXPOSE 3000
 
-# Iniciar la aplicación
+# Comando para iniciar la aplicación
 CMD ["npm", "start"]
