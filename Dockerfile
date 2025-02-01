@@ -1,10 +1,15 @@
-FROM python:3.9-slim
-
-# Usar una imagen base que tenga Node.js
+# Usar una imagen base que tenga Node.js y Python
 FROM node:16-buster-slim
 
-# Instalar Python y pip
-RUN apt-get update && apt-get install -y python3-pip
+# Instalar Python y pip, junto con las dependencias necesarias para Pillow
+RUN apt-get update && apt-get install -y \
+    python3 \
+    python3-pip \
+    python3-dev \
+    zlib1g-dev \
+    libjpeg-dev \
+    libpng-dev \
+    libfreetype6-dev
 
 # Establecer el directorio de trabajo en el contenedor
 WORKDIR /app
