@@ -1,7 +1,7 @@
-# Usar una imagen base que tenga Node.js y Python
+# Usar una imagen base que tenga Node.js
 FROM node:16-buster-slim
 
-# Instalar Python y pip, junto con las dependencias necesarias para Pillow
+# Instalar Python, pip y las dependencias necesarias para Pillow
 RUN apt-get update && apt-get install -y \
     python3 \
     python3-pip \
