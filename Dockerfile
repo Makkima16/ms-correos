@@ -1,3 +1,5 @@
+FROM python:3.9-slim
+
 # Usar una imagen base que tenga Node.js
 FROM node:16-buster-slim
 
