@@ -30,7 +30,7 @@ app.post('/send-email', async (req, res) => {
   const certificatePath = path.join(outputDir, `${cedula}_certificado.pdf`);
 
   // Generar el certificado utilizando Python
-  const pythonProcess = spawn(path.join(__dirname, 'venv', 'Scripts', 'python.exe'), [
+  const pythonProcess = spawn('python3', [
     path.join(__dirname, 'generate_certificate.py'),
     name,
     certificatePath,
