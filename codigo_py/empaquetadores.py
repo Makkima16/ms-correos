@@ -34,24 +34,22 @@ width, height = letter
 c = canvas.Canvas(packet, pagesize=(width*2, height*2))
 
 # Configurar el texto del certificado
-c.setFillColorRGB(139/255, 119/255, 40/255)
-c.setFont('VeraBd', 50)
-c.drawCentredString(422, 310, student)
+c.setFillColorRGB(140/255, 169/255, 75/255)
+c.setFont('VeraBd', 16)
+c.drawCentredString(310,280, student)
 
-c.setFont('Vera', 25)
-c.drawCentredString(422, 215, cedula)
+c.setFont('Vera', 13)
+c.drawCentredString(170, 260, cedula)
 
-c.setFont('Vera', 25)
-c.drawCentredString(422, 135, course)
 
-c.setFillColorRGB(1/255, 1/255, 1/255)
-c.setFont('VeraBI', 16)
-c.drawCentredString(578, 77, current_date)  # Aquí usamos la fecha actual
+c.setFillColorRGB(140/255, 169/255, 75/255)
+c.setFont('VeraBI', 12)
+c.drawCentredString(530, 240, current_date)  # Aquí usamos la fecha actual
 
 c.save()
 
 # Combinar el texto con la plantilla del certificado
-existing_pdf = PdfReader(open('input/certificate_template.pdf', 'rb'))
+existing_pdf = PdfReader(open('input/empaquetadores.pdf', 'rb'))
 page = existing_pdf.pages[0]
 
 packet.seek(0)
