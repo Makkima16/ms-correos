@@ -1,5 +1,5 @@
 # Usar una imagen base que tenga Node.js
-FROM node:16-buster-slim
+FROM node:16-bullseye-slim
 
 # Instalar Python, pip y las dependencias necesarias para Pillow
 RUN apt-get update && apt-get install -y \
